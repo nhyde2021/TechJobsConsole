@@ -128,6 +128,10 @@ namespace TechJobsConsole
                 }
                 Console.WriteLine("*****\n");
             }
+            if (someJobs.Count == 0)
+            {
+                Console.WriteLine("\n***** No Results *****");
+            }
         }
     }
 }
