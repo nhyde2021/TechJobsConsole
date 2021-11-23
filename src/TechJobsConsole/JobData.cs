@@ -57,6 +57,33 @@ namespace TechJobsConsole
 
             return jobs;
         }
+        public static List<Dictionary<string, string>> FindValueBy(string searchInput)
+        {
+            LoadData();
+
+            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+
+            foreach (Dictionary<string, string> row in AllJobs)
+            {
+                foreach (KeyValuePair<string, string> item in row)
+                {
+                    string aValue = item.Value;
+
+                    if (aValue.Contains(searchInput))
+                    {
+                        if (!jobs.Contains(row))
+                        {
+                            jobs.Add(row);
+                        }
+                    }
+                }
+            }
+
+
+            return jobs;
+
+
+        }
 
         /*
          * Load and parse data from job_data.csv
